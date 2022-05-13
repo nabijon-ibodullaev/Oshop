@@ -1,0 +1,349 @@
+<!-- Top Header -->
+<div class="container-fluid py-5 header">
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-3 divider mb-3">
+      <mat-list>
+        <mat-list-item
+          ><a class="d-flex align-items-center text-dark text-decoration-none">
+            <mat-icon class="fs-5">home</mat-icon> Home</a
+          ></mat-list-item
+        >
+        <mat-divider></mat-divider>
+        <mat-list-item
+          ><a class="d-flex align-items-center text-dark text-decoration-none">
+            <mat-icon class="fs-5">shopping_bag</mat-icon> Best Selling</a
+          ></mat-list-item
+        >
+        <mat-divider></mat-divider>
+        <mat-list-item
+          ><a class="d-flex align-items-center text-dark text-decoration-none">
+            <mat-icon class="fs-5">add_circle</mat-icon> New Arrivals</a
+          ></mat-list-item
+        >
+        <mat-divider></mat-divider>
+        <mat-list-item
+          ><a class="d-flex align-items-center text-dark text-decoration-none">
+            <mat-icon class="fs-5">woman</mat-icon> Fashion Beauty</a
+          ></mat-list-item
+        >
+        <mat-divider></mat-divider>
+        <mat-list-item
+          ><a class="d-flex align-items-center text-dark text-decoration-none">
+            <mat-icon class="fs-5">boy</mat-icon> Kids & Babies Clothes</a
+          ></mat-list-item
+        >
+        <mat-divider></mat-divider>
+        <mat-list-item
+          ><a class="d-flex align-items-center text-dark text-decoration-none">
+            <mat-icon class="fs-5">man</mat-icon> Men & Women Clothes</a
+          ></mat-list-item
+        >
+        <mat-divider></mat-divider>
+      </mat-list>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-6">
+      <img
+        src="../../assets/home/web-shopping.svg"
+        class="img-fluid"
+        alt="web shopping "
+      />
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+</div>
+
+<!-- Cards -->
+<div class="card-bg">
+  <div class="container py-4">
+    <div class="row">
+      <div class="col-md-3 col-sm-6 box-head">
+        <div class="box d-flex align-items-center justify-content-center">
+          <div class="text-center">
+            <fa-icon class="icon-payment" [icon]="faCreditCard"></fa-icon>
+            <h3 class="body-2 fw-bold mt-2">Secure Payment</h3>
+            <p class="body-1">Lorem ipsum dolor sit amet consectetur elit</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 box-head">
+        <div class="box text-center">
+          <fa-icon class="icon-payment" [icon]="faTruck"></fa-icon>
+          <h3 class="body-2 fw-bold mt-2">Worldwide Delivery</h3>
+          <p class="body-1">Lorem ipsum dolor sit amet consectetur elit</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 box-head">
+        <div class="box text-center">
+          <fa-icon class="icon-payment" [icon]="faArrowsRotate"></fa-icon>
+          <h3 class="body-2 fw-bold mt-2">90 Days Return</h3>
+          <p class="body-1">Lorem ipsum dolor sit amet consectetur elit</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 box-head">
+        <div class="box text-center">
+          <fa-icon class="icon-payment" [icon]="faComments"></fa-icon>
+          <h3 class="body-2 fw-bold mt-2">24/7 Support</h3>
+          <p class="body-1">Lorem ipsum dolor sit amet consectetur elit</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ! Image Gallery -->
+  <div class="container pt-3 pb-5">
+    <div class="row">
+      <div class="col-md-3">
+        <img
+          src="../../assets/home/boy girl fashion.jpg"
+          class="img-fluid"
+          alt="boy and girl fashion"
+        />
+      </div>
+      <div class="col-md-3">
+        <img src="../../assets/home/cosmetic.jpg" class="img-fluid" alt="" />
+        <img src="../../assets/home/accesuars.jpg" class="img-fluid" alt="" />
+      </div>
+      <div class="col-md-3">
+        <img src="../../assets/home/cosmetic 2.jpg" class="img-fluid" alt="" />
+        <img src="../../assets/home/accesuars 2.jpg" class="img-fluid" alt="" />
+      </div>
+      <div class="col-md-3">
+        <img
+          src="../../assets/home/woman fashion.jpg"
+          class="img-fluid"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ! CArd Carousel -->
+<div class="container-fluid top-products py-5">
+  <h1 class="text-center fw-bold text-uppercase">Men's Category</h1>
+  <p-carousel
+    [value]="products"
+    [numVisible]="4"
+    [numScroll]="4"
+    [showIndicators]="false"
+    [circular]="false"
+    [autoplayInterval]="5000"
+    [responsiveOptions]="responsiveOptions"
+  >
+    <ng-template pTemplate="header"></ng-template>
+    <ng-template let-product pTemplate="item">
+      <div class="product-item d-flex align-items-start">
+        <div class="product-item-content px-3 pt-3">
+          <div class="pt-3"></div>
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="image">
+              <img
+                class="product-image img-fluid"
+                src="{{ product.image }}"
+                alt="{{ product.title }}"
+              />
+            </div>
+            <div>
+              <h4 class="p-mt-0 p-mb-3 fw-bold">
+                {{ product.price | currency }}
+              </h4>
+
+              <p>
+                <fa-icon class="text-warning" [icon]="faStar"></fa-icon>
+                {{ product.rating.rate }}
+              </p>
+              <p pTooltip="Enter your username">
+                <fa-icon class="text-success" [icon]="faShoppingCart"></fa-icon>
+                {{ product.rating.count }}
+              </p>
+              <hr />
+            </div>
+          </div>
+          <div class="d-flex align-items-center justify-content-end py-4">
+            <button class="btn" (click)="onAddedHeart(product)">
+              <i
+                [ngClass]="[addToHeart ? 'fa-regular' : 'fa-solid']"
+                class="fa-heart"
+              ></i>
+            </button>
+            <button mat-stroked-button pTooltip="hello" tooltipPosition="left">
+              <fa-icon class="fs-5 text-dark" [icon]="faCartPlus"></fa-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
+</div>
+
+<!-- !Womans Category -->
+
+<div class="container-fluid top-products py-5">
+  <h1 class="text-center fw-bold text-uppercase">Women's Category</h1>
+  <p-carousel
+    [value]="WomansProducts"
+    [numVisible]="4"
+    [numScroll]="4"
+    [showIndicators]="false"
+    [circular]="false"
+    [autoplayInterval]="5000"
+    [responsiveOptions]="responsiveOptions"
+  >
+    <ng-template pTemplate="header"></ng-template>
+    <ng-template let-product pTemplate="item">
+      <div class="product-item d-flex align-items-start">
+        <div class="product-item-content px-3 pt-3">
+          <div class="pt-3"></div>
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="image">
+              <img
+                class="product-image img-fluid"
+                src="{{ product.image }}"
+                alt="{{ product.title }}"
+              />
+            </div>
+            <div>
+              <h4 class="p-mt-0 p-mb-3 fw-bold">
+                {{ product.price | currency }}
+              </h4>
+
+              <p>
+                <fa-icon class="text-warning" [icon]="faStar"></fa-icon>
+                {{ product.rating.rate }}
+              </p>
+              <p pTooltip="Enter your username">
+                <fa-icon class="text-success" [icon]="faShoppingCart"></fa-icon>
+                {{ product.rating.count }}
+              </p>
+              <hr />
+            </div>
+          </div>
+          <div class="d-flex align-items-center justify-content-end py-4">
+            <button mat-button>
+              <fa-icon class="fs-5 text-danger" [icon]="faHeart"></fa-icon>
+            </button>
+            <button mat-stroked-button pTooltip="hello" tooltipPosition="left">
+              <fa-icon class="fs-5 text-dark" [icon]="faCartPlus"></fa-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
+</div>
+<!-- !Jewelry Category -->
+
+<div class="container-fluid top-products py-5">
+  <h1 class="text-center fw-bold text-uppercase">Jewelery's Category</h1>
+  <p-carousel
+    [value]="JeweleryProducts"
+    [numVisible]="4"
+    [numScroll]="4"
+    [showIndicators]="false"
+    [circular]="false"
+    [autoplayInterval]="5000"
+    [responsiveOptions]="responsiveOptions"
+  >
+    <ng-template pTemplate="header"></ng-template>
+    <ng-template let-product pTemplate="item">
+      <div class="product-item d-flex align-items-start">
+        <div class="product-item-content px-3 pt-3">
+          <div class="pt-3"></div>
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="image">
+              <img
+                class="product-image img-fluid"
+                src="{{ product.image }}"
+                alt="{{ product.title }}"
+              />
+            </div>
+            <div>
+              <h4 class="p-mt-0 p-mb-3 fw-bold">
+                {{ product.price | currency }}
+              </h4>
+
+              <p>
+                <fa-icon class="text-warning" [icon]="faStar"></fa-icon>
+                {{ product.rating.rate }}
+              </p>
+              <p pTooltip="Enter your username">
+                <fa-icon class="text-success" [icon]="faShoppingCart"></fa-icon>
+                {{ product.rating.count }}
+              </p>
+              <hr />
+            </div>
+          </div>
+          <div class="d-flex align-items-center justify-content-end py-4">
+            <button mat-button>
+              <fa-icon class="fs-5 text-danger" [icon]="faHeart"></fa-icon>
+            </button>
+            <button mat-stroked-button pTooltip="hello" tooltipPosition="left">
+              <fa-icon class="fs-5 text-dark" [icon]="faCartPlus"></fa-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
+</div>
+<!-- !Electronic Category -->
+
+<div class="container-fluid top-products py-5">
+  <h1 class="text-center fw-bold text-uppercase">Electronic's Category</h1>
+  <p-carousel
+    [value]="ElectronicsProducts"
+    [numVisible]="4"
+    [numScroll]="4"
+    [showIndicators]="false"
+    [circular]="false"
+    [autoplayInterval]="5000"
+    [responsiveOptions]="responsiveOptions"
+  >
+    <ng-template pTemplate="header"></ng-template>
+    <ng-template let-product pTemplate="item">
+      <div class="product-item d-flex align-items-start">
+        <div class="product-item-content px-3 pt-3">
+          <div class="pt-3"></div>
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="image">
+              <img
+                class="product-image img-fluid"
+                src="{{ product.image }}"
+                alt="{{ product.title }}"
+              />
+            </div>
+            <div>
+              <h4 class="p-mt-0 p-mb-3 fw-bold">
+                {{ product.price | currency }}
+              </h4>
+
+              <p>
+                <fa-icon class="text-warning" [icon]="faStar"></fa-icon>
+                {{ product.rating.rate }}
+              </p>
+              <p pTooltip="Enter your username">
+                <fa-icon class="text-success" [icon]="faShoppingCart"></fa-icon>
+                {{ product.rating.count }}
+              </p>
+              <hr />
+            </div>
+          </div>
+          <div class="d-flex align-items-center justify-content-end py-4">
+            <button mat-button>
+              <fa-icon class="fs-5 text-danger" [icon]="faHeart"></fa-icon>
+            </button>
+            <button mat-stroked-button pTooltip="hello" tooltipPosition="left">
+              <fa-icon
+                (click)="onAddCart()"
+                class="fs-5 text-dark"
+                [icon]="faCartPlus"
+              ></fa-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
+</div>

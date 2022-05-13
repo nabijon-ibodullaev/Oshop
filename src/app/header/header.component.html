@@ -1,0 +1,117 @@
+<div class="head px-3 fw-normal">
+  <div class="text-dark">{{ EstoreEmail }}</div>
+  <div class="d-flex align-items-center fw-normal text-dark">
+    <mat-icon class="fs-5">phone</mat-icon>
+    {{ EstorePhone }}
+  </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold text-dark" routerLink="/"
+      ><img
+        style="width: 40px"
+        src="data:image/png;base64,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"
+      />DreamShop</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      (click)="onMobileNavbar()"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      [class.show]="showNavbar"
+      class="collapse navbar-collapse"
+      id="navbarSupportedContent"
+    >
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item px-3">
+          <a
+            class="nav-link"
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item px-3">
+          <a class="nav-link" routerLink="/products" routerLinkActive="active"
+            >Products</a
+          >
+        </li>
+        <li class="nav-item px-3">
+          <a
+            class="nav-link"
+            routerLink="/shopping-cart"
+            routerLinkActive="active"
+            >Cart</a
+          >
+        </li>
+      </ul>
+
+      <ul
+        class="navbar-nav mr-auto mb-2 mb-lg-0 d-flex align-items-center cursor-pointer"
+      >
+        <li class="nav-item">
+          <a
+            class="nav-link d-flex align-items-center"
+            routerLink="/profile"
+            routerLinkActive="active"
+          >
+            <mat-icon class="fs-4">account_circle</mat-icon> Profile</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login" routerLinkActive="active"
+            >Login</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            *ngIf="isAdmin"
+            routerLink="/admin"
+            routerLinkActive="active"
+            >Admin</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3 d-flex align-items-center justify-content-center">
+      <h1 class="fs-1 fw-bolder text-danger">
+        E<span class="text-dark">store</span>
+      </h1>
+    </div>
+    <div class="col-md-6">
+      <form action="">
+        <mat-form-field class="w-100" appearance="fill">
+          <mat-label>Search</mat-label>
+          <input matInput type="search" placeholder="Ex. t-shirt" />
+        </mat-form-field>
+      </form>
+    </div>
+    <div class="col-md-3 d-flex align-items-center justify-content-center">
+      <div>
+        <button mat-icon-button class="text-danger">
+          <mat-icon>favorite</mat-icon> ({{ favorite }})
+        </button>
+      </div>
+      &nbsp;&nbsp;&nbsp;
+      <div>
+        <button mat-icon-button class="text-dark">
+          <mat-icon>shopping_cart </mat-icon>({{ countCart$ | async }})
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

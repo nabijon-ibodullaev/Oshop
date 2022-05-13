@@ -1,0 +1,79 @@
+a:hover,
+a:active {
+  color: #34568b !important;
+  cursor: pointer;
+}
+.header {
+  background: url("../../assets/home/wave.svg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #f8ecd1;
+}
+.divider {
+  background-color: #fff;
+  border: 1px solid #ff6f61;
+}
+.card-bg {
+  background-color: #34568b;
+}
+.box-head {
+  padding: 20px;
+}
+.box {
+  width: 100%;
+  padding: 15px 0;
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 0 !important;
+}
+.icon-payment {
+  font-size: 50px;
+  color: #ff6f61;
+}
+.img-fluid:hover {
+  transform: scale(1.01);
+  transition: transform 0.5s ease;
+  position: relative;
+}
+
+.top-products {
+  background-color: #f6f6f6;
+}
+.product-item {
+  width: 80%;
+  height: auto;
+  background-color: #fff;
+  border-radius: 20px;
+  margin: 0 auto;
+  box-shadow: 0 0 2px #ff6f61;
+}
+.product-item-content {
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+.product-image {
+  width: 90px;
+}
+.image {
+  width: 100px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-with: 350px) {
+  .product-item {
+    width: 100%;
+  }
+  .image {
+    width: 70px !important;
+  }
+  .product-image {
+    width: 50px;
+  }
+}
+hr {
+  height: 3px;
+}

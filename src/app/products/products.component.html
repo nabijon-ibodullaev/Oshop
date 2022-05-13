@@ -1,0 +1,124 @@
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a class="text-decoration-none text-primary" routerLink="/">Home</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">products</li>
+    </ol>
+  </nav>
+</div>
+<div class="container-fluid bg-background py-4 text-white">
+  <div class="row px-3">
+    <div class="col-md-1"></div>
+    <div class="col-md-4">
+      <p class="opacity-10 fw-normal">Search product</p>
+
+      <form action="">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">
+            <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
+          </span>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Username"
+            aria-label="Username"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+      </form>
+    </div>
+    <div class="col-md-3">
+      <p class="opacity-10 fw-normal">Get Categories</p>
+      <select
+        [(ngModel)]="selected"
+        (change)="onChange($event)"
+        class="form-select"
+        aria-label="getAll"
+      >
+        <option selected [selected]="getAll" [ngValue]="getAll">
+          Get All Product
+        </option>
+        <option *ngFor="let category of categories" [ngValue]="category">
+          {{ category }}
+        </option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <p class="opacity-10 fw-normal">Sort by Price</p>
+
+      <select
+        [(ngModel)]="SelectedPrice"
+        (change)="onChangePrice($event)"
+        class="form-select"
+      >
+        <option value="0">low to high</option>
+        <option value="50">high to low</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- !All Posts -->
+<div class="container top">
+  <div class="row">
+    <div
+      class="col-lg-3 col-md-4 col-sm-6 my-3"
+      *ngFor="
+        let product of products | slice: (page - 1) * pageSize:page * pageSize
+      "
+    >
+      <div class="product-item d-flex align-items-start">
+        <div class="product-item-content px-3 pt-3">
+          <div class="pt-3"></div>
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="image">
+              <img
+                class="product-image img-fluid"
+                src="{{ product.image }}"
+                alt="{{ product.title }}"
+              />
+            </div>
+            <div>
+              <h4 class="p-mt-0 p-mb-3 fw-bold">
+                {{ product.price | currency }}
+              </h4>
+
+              <p>
+                <fa-icon class="text-warning" [icon]="faStar"></fa-icon>
+                {{ product.rating.rate }}
+              </p>
+              <p pTooltip="Enter your username">
+                <fa-icon class="text-success" [icon]="faShoppingCart"></fa-icon>
+                {{ product.rating.count }}
+              </p>
+              <hr />
+            </div>
+          </div>
+          <div class="d-flex align-items-center justify-content-end py-4">
+            <button mat-button>
+              <fa-icon class="fs-5 text-danger" [icon]="faHeart"></fa-icon>
+            </button>
+            <button
+              class="btn btn-danger btn-sm text-white"
+              (click)="increment(product)"
+              [disabled]="isOnCart"
+              pTooltip="hello"
+              tooltipPosition="left"
+            >
+              <fa-icon class="fs-5 text-white" [icon]="faCartPlus"></fa-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container d-flex align-items-center justify-content-end">
+  <ngb-pagination
+    [(page)]="page"
+    [pageSize]="pageSize"
+    [collectionSize]="products.length"
+  ></ngb-pagination>
+</div>
